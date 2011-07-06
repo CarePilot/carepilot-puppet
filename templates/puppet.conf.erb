@@ -1,0 +1,19 @@
+[main]
+user=puppet
+group=puppet
+report=true
+reports=log,store
+logdir=/var/log/puppet
+vardir=/var/lib/puppet
+ssldir=/var/lib/puppet/ssl
+rundir=/var/run/puppet
+factpath=$vardir/lib/facter
+templatedir=$confdir/templates
+
+[master]
+certname=<%= scope.lookupvar('puppet::params::puppetserver') %>
+
+[agent]
+pluginsync=false
+report=true
+server=<%= scope.lookupvar('puppet::params::puppetserver') %>
