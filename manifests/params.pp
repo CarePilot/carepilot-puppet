@@ -1,3 +1,3 @@
 class puppet::params {
-  $puppetserver = 'puppet.carepilot.com'
+  $puppetserver = 'puppet-internal.carepilot.com'
 }
