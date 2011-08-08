@@ -3,7 +3,9 @@ class puppet::master {
   include puppet::params
 
   package { "puppetmaster":
-    ensure => installed,
+    ensure    => latest,
+    require   => File["/etc/apt/preferences.d/puppet"],
+    subscribe => File["/etc/apt/preferences.d/puppet"],
   }
 
   service { "puppetmaster":

@@ -1,0 +1,3 @@
+Package: puppet puppetmaster puppet-common
+Pin: release a=squeeze-backports
+Pin-Priority: 600
