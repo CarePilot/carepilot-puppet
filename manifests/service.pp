@@ -1,9 +1,9 @@
 class puppet::service {
   service {"puppet":
-    ensure => running,
+    ensure => false,
     hasstatus => true,
     hasrestart => true,
-    enable => true,
+    enable => false,
     require => Class["puppet::install"],
   }
 }
