@@ -1,4 +1,7 @@
 class puppet::service {
+  iptables::resource::rule { puppet:
+    port => 8140,
+  }
   service {"puppet":
     ensure => false,
     hasstatus => true,
