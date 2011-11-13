@@ -2,6 +2,10 @@ class puppet::master {
   include puppet
   include puppet::params
 
+  iptables::resource::rule { puppet:
+    port => 8140,
+  }
+
   package { "puppetmaster":
     ensure    => latest,
     require   => File["/etc/apt/preferences.d/puppet"],
